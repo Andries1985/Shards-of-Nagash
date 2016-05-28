@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+
 using Server;
+using Server.Mobiles;
 using Server.ACC;
 using Server.ACC.CM;
-using Server.Mobiles;
 
 namespace Server.Customs.LS
 {
@@ -87,11 +89,11 @@ namespace Server.Customs.LS
             LevelsAtBase = 83;
             LevelType = LevelTypes.None;
         }
-
+        
         public override void Append(Module mod, bool negativly)
         {
         }
-
+        
         public virtual void AddExp(long amount)
         {
             if (amount < 0)

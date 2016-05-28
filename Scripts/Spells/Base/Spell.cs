@@ -19,6 +19,8 @@ using Server.Spells.Ninjitsu;
 using Server.Spells.Second;
 using Server.Spells.Spellweaving;
 using Server.Targeting;
+using Server.Customs.LS;
+using Server.Customs.LS.Levelables;
 #endregion
 
 namespace Server.Spells
@@ -215,10 +217,24 @@ namespace Server.Spells
 
 			damage = AOS.Scale(damage, (int)(scalar * 100));
 
-			return damage / 100;
-		}
+            #region [Shards of Nagash: Level System]
+            damage = (damage / 100);
 
-		public virtual bool IsCasting { get { return m_State == SpellState.Casting; } }
+            if (m_Caster is PlayerMobile && damage >= 10)
+            {
+                CombatLevel combat = (CombatLevel)LSGovernor.GetAttached(m_Caster.Serial, typeof(CombatLevel));
+                damage = (int)(damage + ((combat.Level * .125) + (combat.Level * .1)));
+            }
+            else
+                damage = (int)(damage / 1.75);
+
+            return damage;// / 100;
+            #endregion
+
+            //return damage / 100;
+        }
+
+        public virtual bool IsCasting { get { return m_State == SpellState.Casting; } }
 
         public virtual void OnCasterHurt()
         {

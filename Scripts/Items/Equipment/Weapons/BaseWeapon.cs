@@ -888,7 +888,23 @@ namespace Server.Items
 
 		public override bool CanEquip(Mobile from)
 		{
-			if (!Ethic.CheckEquip(from, this))
+            #region [Shards of Nagash: ItemID Mod]
+            if (Custom.ItemProps.BonusCount(this) == 0)
+                m_Identified = true;
+
+            if (LootType == LootType.Newbied && !m_Identified)
+                m_Identified = true;
+
+            if (Crafter != null & !m_Identified)
+                m_Identified = true;
+
+            if (m_Identified == false && from.AccessLevel < AccessLevel.GameMaster)
+            {
+                from.SendMessage("You are hesitant to use something that is unknown to you");
+                return false;
+            }
+            #endregion
+            if (!Ethic.CheckEquip(from, this))
 			{
 				return false;
 			}
@@ -4921,9 +4937,19 @@ namespace Server.Items
 			{
 				list.Add(1111709); // Gargoyles Only
 			}
-			#endregion
+            #endregion
 
-			if (ArtifactRarity > 0)
+            #region [Shards of Nagash: ItemID Mod]
+            int bonuses = Custom.ItemProps.BonusCount(this);
+
+            if (bonuses > 0 && m_Crafter == null && !m_Identified && LootType != LootType.Newbied)
+            {
+                list.Add("unidentified");
+                return;
+            }
+            #endregion
+
+            if (ArtifactRarity > 0)
 			{
 				list.Add(1061078, ArtifactRarity.ToString()); // artifact rarity ~1_val~
 			}

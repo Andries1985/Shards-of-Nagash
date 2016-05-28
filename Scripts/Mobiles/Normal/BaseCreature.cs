@@ -30,6 +30,8 @@ using Server.Spells.Sixth;
 using Server.Spells.Spellweaving;
 using Server.Targeting;
 using System.Linq;
+using Server.Customs.LS;
+using Server.Customs.LS.Levelables;
 #endregion
 
 namespace Server.Mobiles
@@ -1022,6 +1024,7 @@ namespace Server.Mobiles
                    /* || c.Combatant == this*/);
         }
 
+        bool ran = false; // Shards of Nagash: Level System
         public override string ApplyNameSuffix(string suffix)
         {
             XmlData customtitle = (XmlData)XmlAttach.FindAttachment(this, typeof(XmlData), "ParagonTitle");
@@ -1043,6 +1046,34 @@ namespace Server.Mobiles
 
                 XmlAttach.AttachTo(this, new XmlData("ParagonTitle", suffix));
             }
+
+            #region [Shards of Nagash: Combat Level] <Display>
+            CreatureLevel levelable = (CreatureLevel)LSGovernor.GetAttached(this.Serial, typeof(CreatureLevel));
+            //bool ran = false;
+            if (!ran && CreatureLevel.StaticTable && Custom.StaticLevel.Table.ContainsKey(this.GetType()))
+            {
+                if (levelable == null)
+                {
+                    levelable = (CreatureLevel)LSGovernor.GetAttached(this.Serial, typeof(CreatureLevel));
+                }
+
+                if (levelable != null)
+                {
+                    levelable.Reset(this);
+                    levelable.AddExp(levelable.LevelsAt[Custom.StaticLevel.Table[this.GetType()]] + 1);
+                }
+
+                ran = true;
+            }
+
+            if (levelable != null)
+            {
+                if (suffix.Length == 0)
+                    suffix = " (Level " + levelable.Level + ")";
+                else
+                    suffix = String.Concat(suffix, " (Level " + levelable.Level + ")");
+            }
+            #endregion
 
             return base.ApplyNameSuffix(suffix);
         }

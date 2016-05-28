@@ -1,0 +1,27 @@
+<C><U>Warrior</C></U>
+
+<U>Description:</U>
+Having spent years mastering various combat arts you are now a hardened veteran, fearing nothing as you explore dungeons and other malevolent places.
+
+<U>Skills:</U>
+Anatomy 
+Fencing 
+Healing 
+Mace Fighting
+Parrying 
+Swordsmanship 
+Tactics
+Wrestling
+
+<U>Bonuses</U>
+Receive less physical damage.
+Deal more physical damage.
+Better chance to parry an attack.
+Heal faster.
+Heal more damage.
+
+<U>Penalties</U>
+Receive more damage from magic.
+Deal less damage with magic.
+Lower chance to Resisting Spells.
+Some magic items are less effective.

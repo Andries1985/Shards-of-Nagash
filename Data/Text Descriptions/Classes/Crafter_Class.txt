@@ -1,0 +1,20 @@
+<C><U>Crafter</C></U>
+
+<U>Description:</U>
+Forging the finest weapons and armour, you are always trying to improve your quality. Searching the earth for new raw materials to use.
+
+<U>Skills:</U>
+Arms Lore
+Blacksmithy
+Bowcraft
+Carpentry
+Lumberjacking
+Mining
+Tailoring
+Tinkering
+
+<U>Bonuses:</U>
+Can craft items.
+
+<U>Penalties:</U>
+Unable to equip plate armor.

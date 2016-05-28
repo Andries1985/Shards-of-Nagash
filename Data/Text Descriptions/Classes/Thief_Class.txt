@@ -1,0 +1,27 @@
+<C><U>Thief</C></U>
+
+<U>Description:</U>
+Cunning as a fox you always keep to the shadows waiting for a victim to rob or kill. Using every method to succeed in your task, poison being one of your favourite.
+
+<U>Skills:</U>
+Detecting Hidden
+Hiding
+Lockpicking
+Fencing
+Snooping
+Poisoning
+Stealing
+Stealth
+
+<U>Bonuses:</U>
+Better in Hiding.
+Better in Detecting Hidden.
+Detecting Hidden works less good on you.
+Can steal.
+Can automatically poison enemies with poisoned weapons.
+
+<U>Penalties:</U>
+Receive more damage from magic.
+Deal less damage with magic.
+Lower chance to Resisting Spells.
+Unable to equip plate armor.

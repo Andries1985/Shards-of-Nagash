@@ -12,12 +12,12 @@ namespace Custom
             StaticLevel.Add(typeof(Chicken), 1, 3);
             StaticLevel.Add(typeof(Bird), 1, 3);
             StaticLevel.Add(typeof(Sewerrat), 1, 3);
-            StaticLevel.Add(typeof(Turkey), 1, 3);
+           // StaticLevel.Add(typeof(Turkey), 1, 3);
             StaticLevel.Add(typeof(Rat), 1, 3);
             StaticLevel.Add(typeof(Rabbit), 1, 3);
             StaticLevel.Add(typeof(Scorpion), 1, 3);
-            StaticLevel.Add(typeof(Spider), 1, 3);
-            StaticLevel.Add(typeof(Frog), 1, 3);
+           // StaticLevel.Add(typeof(Spider), 1, 3);
+           // StaticLevel.Add(typeof(Frog), 1, 3);
             StaticLevel.Add(typeof(Crane), 2, 4);
             StaticLevel.Add(typeof(Cat), 2, 4);
             StaticLevel.Add(typeof(Dog), 2, 4);
@@ -89,7 +89,7 @@ namespace Custom
             StaticLevel.Add(typeof(Imp), 10, 13);
             StaticLevel.Add(typeof(SkitteringHopper), 10, 13);
             StaticLevel.Add(typeof(Wisp), 10, 13);
-            StaticLevel.Add(typeof(UndeadBull), 10, 13);
+           // StaticLevel.Add(typeof(UndeadBull), 10, 13);
             StaticLevel.Add(typeof(PlagueSpawn), 12, 15);
             StaticLevel.Add(typeof(Alligator), 12, 15);
             StaticLevel.Add(typeof(BoneKnight), 12, 15);
@@ -101,7 +101,7 @@ namespace Custom
             StaticLevel.Add(typeof(BoneMagi), 12, 15);
             StaticLevel.Add(typeof(CorruptedSoul), 12, 15);
             StaticLevel.Add(typeof(Troll), 12, 15);
-            StaticLevel.Add(typeof(GiantScorpion), 12, 15);
+           // StaticLevel.Add(typeof(GiantScorpion), 12, 15);
             StaticLevel.Add(typeof(GiantSpider), 12, 15);
             StaticLevel.Add(typeof(Gibberling), 12, 15);
             StaticLevel.Add(typeof(GiantToad), 12, 15);
@@ -136,9 +136,9 @@ namespace Custom
             StaticLevel.Add(typeof(SavageShaman), 17, 20);
             StaticLevel.Add(typeof(Gargoyle), 17, 20);
             StaticLevel.Add(typeof(SandVortex), 17, 20);
-            StaticLevel.Add(typeof(Noonwraith), 17, 20);
-            StaticLevel.Add(typeof(RatmanLord), 20, 25);
-            StaticLevel.Add(typeof(Banshee), 20, 25);
+          //  StaticLevel.Add(typeof(Noonwraith), 17, 20);
+          //  StaticLevel.Add(typeof(RatmanLord), 20, 25);
+          //  StaticLevel.Add(typeof(Banshee), 20, 25);
             StaticLevel.Add(typeof(SavageRider), 20, 25);
             StaticLevel.Add(typeof(GiantSerpent), 20, 25);
             StaticLevel.Add(typeof(PredatorHellCat), 20, 25);
@@ -170,14 +170,14 @@ namespace Custom
             StaticLevel.Add(typeof(OphidianWarrior), 25, 30);
             StaticLevel.Add(typeof(RevenantLion), 25, 30);
             StaticLevel.Add(typeof(PlagueBeast), 25, 30);
-            StaticLevel.Add(typeof(WaterOstard), 25, 30);
+           /* StaticLevel.Add(typeof(WaterOstard), 25, 30);
             StaticLevel.Add(typeof(FireOstard), 25, 30);
             StaticLevel.Add(typeof(EarthOstard), 25, 30);
             StaticLevel.Add(typeof(AirOstard), 25, 30);
             StaticLevel.Add(typeof(WaterFrenziedOstard), 30, 35);
             StaticLevel.Add(typeof(FireFrenziedOstard), 30, 35);
             StaticLevel.Add(typeof(EarthFrenziedOstard), 30, 35);
-            StaticLevel.Add(typeof(AirFrenziedOstard), 30, 35);
+            StaticLevel.Add(typeof(AirFrenziedOstard), 30, 35);*/
             StaticLevel.Add(typeof(Doppleganger), 30, 35);
             StaticLevel.Add(typeof(Beetle), 30, 35);
             StaticLevel.Add(typeof(ScaledSwampDragon), 30, 35);
@@ -202,7 +202,7 @@ namespace Custom
             StaticLevel.Add(typeof(Phoenix), 35, 40);
             StaticLevel.Add(typeof(Ronin), 35, 40);
             StaticLevel.Add(typeof(TerathanAvenger), 35, 40);
-            StaticLevel.Add(typeof(Crawler), 30, 35);
+          /*  StaticLevel.Add(typeof(Crawler), 30, 35);
             StaticLevel.Add(typeof(IceOstard), 35, 40);
             StaticLevel.Add(typeof(SnowOstard), 35, 40);
             StaticLevel.Add(typeof(LavaOstard), 35, 40);
@@ -210,7 +210,7 @@ namespace Custom
             StaticLevel.Add(typeof(IceFrenziedOstard), 40, 45);
             StaticLevel.Add(typeof(SnowFrenziedOstard), 40, 45);
             StaticLevel.Add(typeof(LavaFrenziedOstard), 40, 45);
-            StaticLevel.Add(typeof(LightningFrenziedOstard), 40, 45);
+            StaticLevel.Add(typeof(LightningFrenziedOstard), 40, 45);*/
             StaticLevel.Add(typeof(ValoriteElemental), 40, 45);
             StaticLevel.Add(typeof(Lich), 40, 45);
             StaticLevel.Add(typeof(PestilentBandage), 40, 45);
@@ -218,13 +218,13 @@ namespace Custom
             StaticLevel.Add(typeof(EvilMage), 40, 45);
             StaticLevel.Add(typeof(TerathanMatriarch), 40, 45);
             StaticLevel.Add(typeof(Drake), 40, 45);
-            StaticLevel.Add(typeof(MasterBrigand), 40, 45);
+           // StaticLevel.Add(typeof(MasterBrigand), 40, 45);
             StaticLevel.Add(typeof(BlackSolenWarrior), 40, 45);
             StaticLevel.Add(typeof(RedSolenWarrior), 40, 45);
             StaticLevel.Add(typeof(RedSolenInfiltratorWarrior), 40, 45);
             StaticLevel.Add(typeof(BlackSolenInfiltratorWarrior), 40, 45);
             StaticLevel.Add(typeof(OphidianMatriarch), 40, 45);
-            StaticLevel.Add(typeof(GoatmanArcher), 40, 45);
+           /* StaticLevel.Add(typeof(GoatmanArcher), 40, 45);
             StaticLevel.Add(typeof(GoatmanWarrior), 40, 45);
             StaticLevel.Add(typeof(Ignus), 40, 45);
             StaticLevel.Add(typeof(DeepWyvern), 40, 45);
@@ -244,14 +244,14 @@ namespace Custom
             StaticLevel.Add(typeof(IceElementalLord), 45, 50);
             StaticLevel.Add(typeof(PoisonElementalLord), 45, 50);
             StaticLevel.Add(typeof(ToxicElementalLord), 45, 50);
-            StaticLevel.Add(typeof(VeriteElementalLord), 45, 50);
+            StaticLevel.Add(typeof(VeriteElementalLord), 45, 50);*/
             StaticLevel.Add(typeof(AntLion), 45, 50);
             StaticLevel.Add(typeof(BlackSolenInfiltratorQueen), 45, 50);
             StaticLevel.Add(typeof(BlackSolenQueen), 45, 50);
             StaticLevel.Add(typeof(RedSolenInfiltratorQueen), 45, 50);
             StaticLevel.Add(typeof(RedSolenQueen), 45, 50);
             StaticLevel.Add(typeof(CrystalElemental), 45, 50);
-            StaticLevel.Add(typeof(ElderOstard), 45, 50);
+          /*  StaticLevel.Add(typeof(ElderOstard), 45, 50);
             StaticLevel.Add(typeof(BloodOstard), 45, 50);
             StaticLevel.Add(typeof(VoidOstard), 45, 50);
             StaticLevel.Add(typeof(SwiftOstard), 45, 50);
@@ -273,7 +273,7 @@ namespace Custom
             StaticLevel.Add(typeof(VoidFrenziedOstard), 50, 55);
             StaticLevel.Add(typeof(SwiftFrenziedOstard), 50, 55);
             StaticLevel.Add(typeof(CorpseFrenziedOstard), 50, 55);
-            StaticLevel.Add(typeof(PlacidFrenziedOstard), 50, 55);
+            StaticLevel.Add(typeof(PlacidFrenziedOstard), 50, 55);*/
             StaticLevel.Add(typeof(IceFiend), 50, 55);
             StaticLevel.Add(typeof(Betrayer), 50, 55);
             StaticLevel.Add(typeof(BloodElemental), 50, 55);
@@ -290,14 +290,14 @@ namespace Custom
             StaticLevel.Add(typeof(HellSteed), 50, 55);
             StaticLevel.Add(typeof(SilverSteed), 50, 55);
             StaticLevel.Add(typeof(Kirin), 50, 55);
-            StaticLevel.Add(typeof(Seeker), 50, 55);
+          /*  StaticLevel.Add(typeof(Seeker), 50, 55);
             StaticLevel.Add(typeof(IceDaemon), 50, 55);
             StaticLevel.Add(typeof(Yeti), 50, 55);
             StaticLevel.Add(typeof(GreatBallofFire), 50, 55);
             StaticLevel.Add(typeof(BabyMinotaur), 50, 55);
             StaticLevel.Add(typeof(VenusPeopleTrap), 55, 60);
             StaticLevel.Add(typeof(UmberHulk), 55, 60);
-            StaticLevel.Add(typeof(CrystalElementalLord), 55, 60);
+            StaticLevel.Add(typeof(CrystalElementalLord), 55, 60);*/
             StaticLevel.Add(typeof(GargoyleDestroyer), 55, 60);
             StaticLevel.Add(typeof(LesserHiryu), 55, 60);
             StaticLevel.Add(typeof(Nightmare), 55, 60);
@@ -309,30 +309,30 @@ namespace Custom
             StaticLevel.Add(typeof(LichLord), 55, 60);
             StaticLevel.Add(typeof(RottingCorpse), 55, 60);
             StaticLevel.Add(typeof(ExodusMinion), 55, 60);
-            StaticLevel.Add(typeof(OstardofDreams), 55, 60);
+           /* StaticLevel.Add(typeof(OstardofDreams), 55, 60);
             StaticLevel.Add(typeof(OstardofRage), 55, 60);
             StaticLevel.Add(typeof(OstardoftheCrypt), 55, 60);
             StaticLevel.Add(typeof(FrenziedOstardofDreams), 60, 65);
             StaticLevel.Add(typeof(FrenziedOstardofRage), 60, 65);
             StaticLevel.Add(typeof(FrenziedOstardoftheCrypt), 60, 65);
-            StaticLevel.Add(typeof(BloodElementalLord), 60, 65);
+            StaticLevel.Add(typeof(BloodElementalLord), 60, 65);*/
             StaticLevel.Add(typeof(Succubus), 60, 65);
             StaticLevel.Add(typeof(Titan), 60, 65);
             StaticLevel.Add(typeof(OgreLord), 60, 65);
             StaticLevel.Add(typeof(ArcticOgreLord), 60, 65);
-            StaticLevel.Add(typeof(Temptress), 60, 65);
+           // StaticLevel.Add(typeof(Temptress), 60, 65);
             StaticLevel.Add(typeof(ArcaneDaemon), 60, 65);
             StaticLevel.Add(typeof(FleshGolem), 60, 65);
             StaticLevel.Add(typeof(Dragon), 65, 70);
-            StaticLevel.Add(typeof(GoldenDrake), 65, 70);
-            StaticLevel.Add(typeof(HeavenlyDrake), 65, 70);
+          //  StaticLevel.Add(typeof(GoldenDrake), 65, 70);
+          //  StaticLevel.Add(typeof(HeavenlyDrake), 65, 70);
             StaticLevel.Add(typeof(JukaMage), 65, 70);
             StaticLevel.Add(typeof(MeerCaptain), 65, 70);
             StaticLevel.Add(typeof(MeerMage), 65, 70);
             StaticLevel.Add(typeof(Oni), 65, 70);
             StaticLevel.Add(typeof(CrystalDaemon), 65, 70);
-            StaticLevel.Add(typeof(Beastman), 65, 70);
-            StaticLevel.Add(typeof(DaemonLieutenant), 70, 75);
+          //  StaticLevel.Add(typeof(Beastman), 65, 70);
+          //  StaticLevel.Add(typeof(DaemonLieutenant), 70, 75);
             StaticLevel.Add(typeof(JukaLord), 70, 75);
             StaticLevel.Add(typeof(Hiryu), 70, 75);
             StaticLevel.Add(typeof(MeerEternal), 70, 75);
@@ -342,7 +342,7 @@ namespace Custom
             StaticLevel.Add(typeof(WandererOfTheVoid), 75, 80);
             StaticLevel.Add(typeof(YomotsuPriest), 75, 80);
             StaticLevel.Add(typeof(YomotsuWarrior), 75, 80);
-            StaticLevel.Add(typeof(ForestWraith), 75, 80);
+          /*  StaticLevel.Add(typeof(ForestWraith), 75, 80);
             StaticLevel.Add(typeof(BeastmanLord), 75, 80);
             StaticLevel.Add(typeof(WaterDragon), 75, 80);
             StaticLevel.Add(typeof(FireDragon), 75, 80);
@@ -354,26 +354,26 @@ namespace Custom
             StaticLevel.Add(typeof(StormDragon), 80, 85);
             StaticLevel.Add(typeof(UndeadDragon), 80, 85);
             StaticLevel.Add(typeof(PoisonDragon), 80, 85);
-            StaticLevel.Add(typeof(BlackWisp), 80, 85);
+            StaticLevel.Add(typeof(BlackWisp), 80, 85);*/
             StaticLevel.Add(typeof(ShadowWisp), 80, 85);
             StaticLevel.Add(typeof(RaiJu), 80, 85);
             StaticLevel.Add(typeof(AncientLich), 80, 85);
             StaticLevel.Add(typeof(SkeletalDragon), 80, 85);
             StaticLevel.Add(typeof(YomotsuElder), 80, 85);
             StaticLevel.Add(typeof(ExodusOverseer), 80, 85);
-            StaticLevel.Add(typeof(ArcaneDaemonLord), 80, 85);
+          /*  StaticLevel.Add(typeof(ArcaneDaemonLord), 80, 85);
             StaticLevel.Add(typeof(ChaosDaemonLord), 80, 85);
-            StaticLevel.Add(typeof(TempestDaemon), 85, 90);
+            StaticLevel.Add(typeof(TempestDaemon), 85, 90);*/
             StaticLevel.Add(typeof(OrcBrute), 85, 90);
             StaticLevel.Add(typeof(Moloch), 85, 90);
             StaticLevel.Add(typeof(FetidEssence), 85, 90);
             StaticLevel.Add(typeof(Satyr), 85, 90);
             StaticLevel.Add(typeof(BakeKitsune), 85, 90);
-            StaticLevel.Add(typeof(Mauler), 85, 90);
+          /*  StaticLevel.Add(typeof(Mauler), 85, 90);
             StaticLevel.Add(typeof(Naga), 85, 90);
             StaticLevel.Add(typeof(Starburst), 90, 100);
             StaticLevel.Add(typeof(HillGiant), 90, 100);
-            StaticLevel.Add(typeof(MountainGiant), 90, 100);
+            StaticLevel.Add(typeof(MountainGiant), 90, 100);*/
             StaticLevel.Add(typeof(PlagueBeastLord), 90, 100);
             StaticLevel.Add(typeof(Kraken), 90, 100);
             StaticLevel.Add(typeof(Devourer), 90, 100);
@@ -383,9 +383,9 @@ namespace Custom
             StaticLevel.Add(typeof(KazeKemono), 90, 100);
             StaticLevel.Add(typeof(Balron), 90, 100);
             StaticLevel.Add(typeof(BoneDemon), 90, 100);
-            StaticLevel.Add(typeof(TrasherDaemon), 90, 100);
+          /*  StaticLevel.Add(typeof(TrasherDaemon), 90, 100);
             StaticLevel.Add(typeof(FourArmedDaemon), 90, 100);
-            StaticLevel.Add(typeof(Balrog), 90, 100);
+            StaticLevel.Add(typeof(Balrog), 90, 100);*/
             StaticLevel.Add(typeof(Ravager), 90, 100);
             StaticLevel.Add(typeof(ChaosDragoon), 100, 110);
             StaticLevel.Add(typeof(ChaosDragoonElite), 100, 110);
@@ -397,8 +397,8 @@ namespace Custom
             StaticLevel.Add(typeof(KhaldunZealot), 100, 110);
             StaticLevel.Add(typeof(Minotaur), 100, 110);
             StaticLevel.Add(typeof(MinotaurScout), 100, 110);
-            StaticLevel.Add(typeof(PurplePeopleEater), 100, 110);
-            StaticLevel.Add(typeof(RhinocerosBeetle), 110, 120);
+          //  StaticLevel.Add(typeof(PurplePeopleEater), 100, 110);
+          //  StaticLevel.Add(typeof(RhinocerosBeetle), 110, 120);
             StaticLevel.Add(typeof(Leviathan), 110, 120);
             StaticLevel.Add(typeof(MinotaurCaptain), 110, 120);
             StaticLevel.Add(typeof(EtherealWarrior), 110, 120);
@@ -408,22 +408,22 @@ namespace Custom
             StaticLevel.Add(typeof(AbysmalHorror), 110, 120);
             StaticLevel.Add(typeof(Impaler), 110, 120);
             StaticLevel.Add(typeof(TsukiWolf), 110, 120);
-            StaticLevel.Add(typeof(GoldenDragon), 110, 120);
+          /*  StaticLevel.Add(typeof(GoldenDragon), 110, 120);
             StaticLevel.Add(typeof(HeavenlyDragon), 110, 120);
             StaticLevel.Add(typeof(VoidDaemon), 110, 120);
             StaticLevel.Add(typeof(DesireDaemon), 110, 120);
             StaticLevel.Add(typeof(Silvani), 110, 120);
             StaticLevel.Add(typeof(DaemonLord), 120, 130); 
-            StaticLevel.Add(typeof(BlackDragon), 120, 130); 
+            StaticLevel.Add(typeof(BlackDragon), 120, 130); */
             StaticLevel.Add(typeof(GreaterDragon), 120, 130);
             StaticLevel.Add(typeof(Yamandon), 120, 130);
             StaticLevel.Add(typeof(Guardian), 120, 130);
             StaticLevel.Add(typeof(ShadowKnight), 120, 130);
             StaticLevel.Add(typeof(AncientWyrm), 120, 130);
-            StaticLevel.Add(typeof(Remorhaz), 120, 130);
+           /* StaticLevel.Add(typeof(Remorhaz), 120, 130);
             StaticLevel.Add(typeof(EvilSnowman), 130, 140);
             StaticLevel.Add(typeof(DemonKnight), 149);
-            StaticLevel.Add(typeof(Diablo), 149);
+            StaticLevel.Add(typeof(Diablo), 149);*/
             StaticLevel.Add(typeof(Barracoon), 149);
             StaticLevel.Add(typeof(Harrower), 149);
             StaticLevel.Add(typeof(LordOaks), 149);
@@ -435,11 +435,11 @@ namespace Custom
             StaticLevel.Add(typeof(Meraktus), 149);
             StaticLevel.Add(typeof(Serado), 149);
             StaticLevel.Add(typeof(Twaulo), 149);
-            StaticLevel.Add(typeof(SinisterMageLord), 149);
+          /*  StaticLevel.Add(typeof(SinisterMageLord), 149);
             StaticLevel.Add(typeof(KingLeoric), 149);
             StaticLevel.Add(typeof(Hephaestus), 149);
             StaticLevel.Add(typeof(TheCowKing), 149);
-            StaticLevel.Add(typeof(Andariel), 149);
+            StaticLevel.Add(typeof(Andariel), 149);*/
             StaticLevel.Add(typeof(MonstrousInterredGrizzle), 174);
         }
     }

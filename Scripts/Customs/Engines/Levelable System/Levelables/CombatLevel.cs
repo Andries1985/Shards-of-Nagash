@@ -1,13 +1,15 @@
 using System;
+
 using Server;
-using Server.ACC;
-using Server.ACC.CM;
 using Server.Items;
 using Server.Mobiles;
 using Server.Engines.Harvest;
 using Server.Engines.PartySystem;
 using Server.Customs.LS;
 using Server.Customs.Gumps;
+using Server.ACC;
+using Server.ACC.CM;
+
 
 namespace Server.Customs.LS.Levelables
 {
@@ -85,11 +87,11 @@ namespace Server.Customs.LS.Levelables
             m_PartyShareRange = 14;
             m_PowerLevelRange = 20;
         }
-
+        
         public override void Append(Module mod, bool negativly)
         {
         }
-
+        
         public virtual void AddExp(Mobile killer, Mobile killed)
         {
             if (killer == null | killed == null)
@@ -418,7 +420,7 @@ namespace Server.Customs.LS.Levelables
         static int GetExp(Mobile m, Mobile k)
         {
             if (m is PlayerMobile && k is PlayerMobile)
-                return 0;//nagashizar doesnt give pk exp;
+                return 0;//Shards of Nagash doesnt give pk exp;
 
             CreatureLevel creature = (CreatureLevel)LSGovernor.GetAttached(k.Serial, typeof(CreatureLevel));
             //CombatLevel combat = (CombatLevel)LSGovernor.GetAttached(m.Serial, typeof(CombatLevel));

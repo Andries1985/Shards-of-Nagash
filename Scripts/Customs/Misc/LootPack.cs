@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 
+using Server;
 using Server.Items;
 using Server.Mobiles;
 
@@ -192,13 +194,13 @@ namespace Custom
                     }
                     else if (entry.Types[itemIndex] == typeof(BaseRunicTool))
                     {
-                        switch (Utility.Random(4))
+                        switch (Utility.Random(2))
                         {
                             case 0: looted = new RunicSewingKit(GetRandomLeather()); break;
                             case 1: looted = new RunicHammer(GetRandomMetal()); break;
-                            case 2: looted = new RunicSaw(GetRandomWood()); break;
-                            case 3: looted = new RunicFletcherTools(GetRandomWood()); break;
-                            case 4: looted = new RunicSewingKit(GetRandomLeather()); break;//J.I.C
+                           // case 2: looted = new RunicSaw(GetRandomWood()); break;
+                           // case 3: looted = new RunicFletcherTools(GetRandomWood()); break;
+                            case 2: looted = new RunicSewingKit(GetRandomLeather()); break;//J.I.C
                         }
                     }
                     else
@@ -235,11 +237,11 @@ namespace Custom
                         continue;
                     }
 
-                    if (looted is BaseRanged/*.GetType().IsSubclassOf(typeof(BaseRanged))*/ && 1 >= Utility.Random(200))
-                    {
+                   // if (looted is BaseRanged/*.GetType().IsSubclassOf(typeof(BaseRanged))*/ && 1 >= Utility.Random(200))
+                   /* {
                         ((BaseRanged)looted).EnergyBow = true;
                         ((BaseRanged)looted).EnergyCost = Utility.RandomMinMax(3, 10);
-                    }
+                    }*/
 
                     //if (looted.GetType() == typeof(ScrollofCombatSecrets) || 1 >= Utility.Random(1000))
                         //looted.LootType = LootType.Blessed;
@@ -432,14 +434,14 @@ namespace Custom
 
         public CraftResource GetRandomWood()
         {
-            switch (Utility.Random(5))
+            switch (Utility.Random(2))
             {
                 case 0: return CraftResource.AshWood;
                 case 1: return CraftResource.OakWood;
-                case 2: return CraftResource.CherryWood;
-                case 3: return CraftResource.MahoganyWood;
-                case 4: return CraftResource.WalnutWood;
-                case 5: return CraftResource.AshWood;
+               // case 2: return CraftResource.CherryWood;
+               // case 3: return CraftResource.MahoganyWood;
+               // case 4: return CraftResource.WalnutWood;
+                case 2: return CraftResource.AshWood;
             }
 
             return CraftResource.AshWood;
@@ -522,9 +524,9 @@ namespace Custom
             HighHealPotions.Add(typeof(GreaterHealPotion));
 
             LowRares.Add(typeof(IDWand));
-            LowRares.Add(typeof(WeaversSpool));
+            //LowRares.Add(typeof(WeaversSpool));
 
-            MedRares.Add(typeof(BasicShipKit));
+            /*MedRares.Add(typeof(BasicShipKit));
             MedRares.Add(typeof(batleth));
             MedRares.Add(typeof(bonebreaker));
             MedRares.Add(typeof(Chaos));
@@ -549,19 +551,19 @@ namespace Custom
             MedRares.Add(typeof(thevanquisher));
             MedRares.Add(typeof(twocobras));
             MedRares.Add(typeof(war));
-            MedRares.Add(typeof(wrathofki));
+            MedRares.Add(typeof(wrathofki));*/
             MedRares.Add(typeof(TreasureMap));
             MedRares.Add(typeof(ElvenQuiver));
 
-            HighRares.Add(typeof(SpellChannelingDeed));
+            /*HighRares.Add(typeof(SpellChannelingDeed));
             HighRares.Add(typeof(EnhancementDeed));
             HighRares.Add(typeof(ArmorEnhancementDeed));
             HighRares.Add(typeof(WeaponEnhancementDeed));
             HighRares.Add(typeof(ElementEnhancementDeed));
-            HighRares.Add(typeof(AosEnhancementDeed));
+            HighRares.Add(typeof(AosEnhancementDeed));*/
             HighRares.Add(typeof(BaseRunicTool));
 
-            UltraRares.Add(typeof(SkillEnhancementDeed));
+            //UltraRares.Add(typeof(SkillEnhancementDeed));
             UltraRares.Add(typeof(ScrollofCombatSecrets));
 
             Potion.Add(LowPotions);

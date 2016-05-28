@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+
 using Server.Network;
 using Server.Mobiles;
 using Server.Items;
@@ -13,7 +14,7 @@ namespace Server.Gumps
         public static void Initialize()
         {
             CommandSystem.Prefix = "[";
-            Properties.Register();
+            //Properties.Register();
             Register("mystats", AccessLevel.Player, new CommandEventHandler(MyStats_OnCommand));
         }
 

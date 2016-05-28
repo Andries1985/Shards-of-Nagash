@@ -1,0 +1,20 @@
+<C><U>Bard</C></U>
+
+<U>Description:</U>
+Entertaining people is your greatest joy, although music can be used for a different reason as well.
+
+<U>Skills:</U>
+Mace Fighting
+Cartography
+Enticement
+Herding
+Musicianship
+Peacemaking
+Provocation
+Taste Identification
+
+<U>Bonuses:</U>
+Can use bard skills.
+
+<U>Penalties:</U>
+Unable to equip plate armor.

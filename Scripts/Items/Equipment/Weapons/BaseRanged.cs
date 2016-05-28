@@ -16,7 +16,7 @@ namespace Server.Items
 {
 	public abstract class BaseRanged : BaseMeleeWeapon
 	{
-		public abstract int EffectID { get; }
+        public abstract int EffectID { get; }
 		public abstract Type AmmoType { get; }
 		public abstract Item Ammo { get; }
 

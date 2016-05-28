@@ -1,0 +1,24 @@
+<C><U>Mage</C></U>
+
+<U>Description:</U>
+Born as a magi you battle your enemies with potent spells and potions.
+
+<U>Skills:</U>
+Alchemy
+Evaluating Intelligence
+Inscription
+Item Identification
+Magery
+Meditation
+Resisting Spells
+Spirit Speak
+
+<U>Bonuses:</U>
+Can cast spells.
+Can craft magical items.
+Can brew potions.
+
+<U>Penalties:</U>
+Less damage with physical attacks.
+More damage from physical attacks.
+Unable to equip Plate Armor.

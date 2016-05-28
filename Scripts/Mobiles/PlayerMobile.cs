@@ -8,7 +8,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using Server.Accounting;
 using Server.ContextMenus;
 using Server.Engines.BulkOrders;
@@ -42,6 +41,8 @@ using Server.Spells.Seventh;
 using Server.Spells.Sixth;
 using Server.Spells.Spellweaving;
 using Server.Targeting;
+using Server.Customs.LS;
+using Server.Customs.LS.Levelables;
 
 using RankDefinition = Server.Guilds.RankDefinition;
 #endregion
@@ -105,12 +106,59 @@ namespace Server.Mobiles
 		Red,
 		Black
 	}
-	#endregion
+    #endregion
 
-	public class PlayerMobile : Mobile, IHonorTarget
+    #region [Shards of Nagash: Level System] <Enums>
+    public enum Class
+    {
+        None,
+        Mage,
+        Warrior,
+        Ranger,
+        Thief,
+        Bard,
+        Crafter
+    }
+
+    public enum ClassRank
+    {
+        None,
+        Novice,
+        Apprentice,
+        Expert,
+        Master,
+        Elder,
+        Legend
+    }
+    #endregion
+
+    public class PlayerMobile : Mobile, IHonorTarget
 	{
-		#region Mount Blocking
-		public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
+        #region [Shards of Nagash: Level System]
+        private Class m_Class;
+        private ClassRank m_Rank;
+
+        private bool m_HasJob;
+        /*
+                [CommandProperty(AccessLevel.GameMaster)]
+                public int StatPoint { get { return StatPoints; } set { StatPoints = value; } }
+
+                [CommandProperty(AccessLevel.GameMaster)]
+                public int SkillPoint { get { return SkillPoints; } set { SkillPoints = value; } }
+        */
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public Class Class { get { return m_Class; } set { m_Class = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public ClassRank Rank { get { return m_Rank; } set { m_Rank = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool HasJob { get { return m_HasJob; } set { m_HasJob = value; } }
+        #endregion
+
+        #region Mount Blocking
+        public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
 		{
 			if (dismount)
 			{
@@ -220,7 +268,7 @@ namespace Server.Mobiles
 		private int m_Profession;
 
 		private int m_NonAutoreinsuredItems;
-		// number of items that could not be automaitically reinsured because gold in bank was not enough
+		// number of items that could not be automatically reinsured because gold in bank was not enough
 
 		/*
 		* a value of zero means, that the mobile is not executing the spell. Otherwise,
@@ -2855,9 +2903,56 @@ namespace Server.Mobiles
 			{
 				InvisibilityPotion.Iterrupt(this);
 			}
-			#endregion
+            #endregion
 
-			base.OnDamage(amount, from, willKill);
+            #region [Shards of Nagash: Level System]
+            if (willKill && from is PlayerMobile)
+            {
+                if (from is BaseCreature && ((BaseCreature)from).Controlled)
+                {
+                    LSGovernor.AttachLevelables(from.Serial); //easy fix...
+                    CombatLevel levelable = (CombatLevel)LSGovernor.GetAttached(from.Serial, typeof(CombatLevel));
+                    levelable.AddExp(from, this);
+                }
+                Timer.DelayCall(TimeSpan.FromSeconds(10), ((PlayerMobile)@from).RecoverAmmo);
+            }
+
+            double reduct = 0;
+            CombatLevel combat = (CombatLevel)LSGovernor.GetAttached(this.Serial, typeof(CombatLevel));
+            if (this.Class == Class.Warrior && combat.Level <= 15)
+                reduct += (16.5 - combat.Level) / 5;
+
+            if (from is BaseCreature)
+            {
+                CreatureLevel clevel = (CreatureLevel)LSGovernor.GetAttached(from.Serial, typeof(CreatureLevel));
+                if (clevel != null && combat.Level > clevel.Level)
+                {
+                    if ((combat.Level - clevel.Level) <= 8)
+                    {
+                        reduct += (combat.Level - clevel.Level) * .2075;
+                        if (reduct < 1)
+                            reduct = 1;
+
+                        if (reduct > 3)
+                            reduct = 3;
+                    }
+
+                    if ((combat.Level - clevel.Level) > 8)
+                    {
+                        reduct = (combat.Level - clevel.Level) * .215;
+                        if (reduct < 3)
+                            reduct = 3;
+
+                        if (reduct > 9)
+                            reduct = 9;
+                    }
+
+                    amount = (int)(amount / reduct);
+                }
+            }
+            #endregion
+
+            base.OnDamage(amount, from, willKill);
 		}
 
 		public override void Resurrect()
@@ -3663,7 +3758,16 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
-				case 29:
+                #region [Shards of Nagash: Level System]
+                case 30:
+                    {
+                        m_Class = (Class)reader.ReadEncodedInt();
+                        m_Rank = (ClassRank)reader.ReadEncodedInt();
+
+                        goto case 29;
+                    }
+                #endregion
+                case 29:
 					{
 						m_GauntletPoints = reader.ReadDouble();
 
@@ -4066,11 +4170,16 @@ namespace Server.Mobiles
 
 			base.Serialize(writer);
 
-			writer.Write(29); // version
+			writer.Write(30); // version
 
+            // Version 30
+            #region [Shards of Nagash: Level System]
+            writer.WriteEncodedInt((int)m_Class);
+            writer.WriteEncodedInt((int)m_Rank);
+            #endregion
 
-			// Version 29
-			writer.Write(m_GauntletPoints);
+            // Version 29
+            writer.Write(m_GauntletPoints);
 
 			#region Plant System
 			writer.Write(m_SSNextSeed);
@@ -4394,8 +4503,8 @@ namespace Server.Mobiles
 		{
 			base.GetProperties(list);
 
-			#region Mondain's Legacy
-			if (m_CollectionTitles != null && m_SelectedTitle > -1)
+            #region Mondain's Legacy
+            if (m_CollectionTitles != null && m_SelectedTitle > -1)
 			{
 				if (m_SelectedTitle < m_CollectionTitles.Count)
 				{
@@ -5197,8 +5306,8 @@ namespace Server.Mobiles
 				}
 			}
 
-			#region Ethics
-			if (m_EthicPlayer != null)
+            #region Ethics
+            if (m_EthicPlayer != null)
 			{
 				if (suffix.Length == 0)
 				{

@@ -1,0 +1,25 @@
+<C><U>Ranger</C></U>
+
+<U>Descriptions:</U>
+One with the forest and animals, you feel most comfortable when alone in the wild, with a bow as your best friend.
+
+<U>Skills:</U>
+Animal Lore
+Animal Taming
+Archery
+Camping
+Cooking
+Fishing
+Tracking
+Veterinary
+
+<U>Bonuses:</U>
+More damage with Archery.
+Can tame animals.
+Can fish and cook.
+
+<U>Penalties:</U>
+Less damage with melee physical attacks.
+More damage from physical attacks.
+Less damage with magical attacks.
+Unable to equip plate armor.
