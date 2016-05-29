@@ -756,12 +756,12 @@ namespace Server.Misc
             }
         }
 
-        private static void EquipItem(Item item)
+        public static void EquipItem(Item item)
         {
             EquipItem(item, false);
         }
 
-        private static void EquipItem(Item item, bool mustEquip)
+        public static void EquipItem(Item item, bool mustEquip)
         {
             if (!Core.AOS)
                 item.LootType = LootType.Newbied;
@@ -777,7 +777,7 @@ namespace Server.Misc
                 item.Delete();
         }
 
-        private static void PackItem(Item item)
+        public static void PackItem(Item item)
         {
             if (!Core.AOS)
                 item.LootType = LootType.Newbied;
@@ -790,7 +790,7 @@ namespace Server.Misc
                 item.Delete();
         }
 
-        private static void PackInstrument()
+        public static void PackInstrument()
         {
             switch ( Utility.Random(6) )
             {
@@ -815,7 +815,7 @@ namespace Server.Misc
             }
         }
 
-        private static void PackScroll(int circle)
+        public static void PackScroll(int circle)
         {
             switch ( Utility.Random(8) * (circle + 1) )
             {
@@ -894,14 +894,14 @@ namespace Server.Misc
             }
         }
 
-        private static Item NecroHue(Item item)
+        public static Item NecroHue(Item item)
         {
             item.Hue = 0x2C3;
 
             return item;
         }
 
-        private static void	AddSkillItems(SkillName skill, Mobile m)
+        public static void	AddSkillItems(SkillName skill, Mobile m)
         {
             bool elf = (m.Race == Race.Elf);
             bool human = (m.Race == Race.Human);

@@ -185,7 +185,7 @@ namespace Custom
                     {
                         int t = Utility.Random(LootPack.LowPotions.Count);
                         Server.LootPackItem lpi = new Server.LootPackItem(Custom.LootPack.LowPotions[t], 1);
-                        looted = lpi.Construct(false);
+                        looted = lpi.Construct(true, true, true);
                     }
                     else if (entry.Types[itemIndex] == typeof(TreasureMap))
                     {
@@ -206,7 +206,7 @@ namespace Custom
                     else
                     {
                         Server.LootPackItem lpi = new Server.LootPackItem(entry.Types[itemIndex], 1);
-                        looted = lpi.Construct(false);
+                        looted = lpi.Construct(true, true, true);
                     }
 
                     if (looted == null)
